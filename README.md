@@ -1,6 +1,6 @@
-# Image Search Engine
+# Simple Image Retrieval
 
-This is a Python codebase for an Image Search Engine that allows users to find similar images based on a query image. The codebase utilizes image vectorization and cosine similarity to calculate the similarity between images.
+This is a Python codebase for an Image Retrieval Engine that allows users to find similar images based on a query image. The codebase utilizes image vectorization and cosine similarity to calculate the similarity between images.
 
 ## Installation
 
