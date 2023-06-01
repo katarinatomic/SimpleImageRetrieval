@@ -37,7 +37,6 @@ class Vectorizer:
             Resized and padded image as a numpy array.
         """
         image_shape = image.shape[:2]
-        
         ratio = target_shape[0] / min(image_shape)
         if ratio * max(image_shape) > target_shape[0]:
             ratio = target_shape[0] / max(image_shape)
@@ -85,10 +84,7 @@ class Vectorizer:
         preprocessed_images = np.array(preprocessed_images)
         vectorized_images = self.model.predict(preprocessed_images)
         
-        if self.debug:
-            return preprocessed_images, np.array(vectorized_images)
-        else:
-            return np.array(vectorized_images)
+        return np.array(vectorized_images)
     
     def save(self, array, filename='vectorized_images.npy'):
         """Saves vectorized images to file.
@@ -107,3 +103,6 @@ class Vectorizer:
         
         """
         return np.load(filename)
+# -
+
+

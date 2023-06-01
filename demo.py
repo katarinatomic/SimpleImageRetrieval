@@ -8,6 +8,9 @@ def demo():
         if query is None:
             print("Failed to load the query image.")
             return
+        if len(query.shape)!=3:
+            print("Query image is not color.")
+            return
         #main function
         main(query, query_path, n)        
     except Exception as e:
@@ -15,5 +18,7 @@ def demo():
 
 # run demo
 n = 5
-query_path = 'simple_image_retrieval_dataset/test-cases/pizza.jpg'
+query_path = 'simple_image_retrieval_dataset/test-cases/leopard.jpg'
 demo()
+
+

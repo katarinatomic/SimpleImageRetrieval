@@ -6,6 +6,7 @@ import numpy as np
 from pathlib import Path
 from typing import List,Tuple
 import argparse
+import time
 
 from lib.vectorizer import Vectorizer
 from lib.search_engine import ImageSearchEngine
@@ -24,7 +25,11 @@ def main(query: np.ndarray,
     if os.path.isfile('vectorized_images.npy'):
         print('Vectorized images already exist in folder!')
         vectorized_images = np.load('vectorized_images.npy')
+        start_time = time.time()
         vectorizer = Vectorizer(vectorized_images=vectorized_images)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        print(f"Vectorization time: {round(elapsed_time,2)} seconds")
     else:
         print('Generating new vectorized images...')
         image_vectors = load_images(root)
