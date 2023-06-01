@@ -7,7 +7,7 @@ This is a Python codebase for an Image Search Engine that allows users to find s
 1. Clone the repository:
 
     ```
-    git clone <repository-url>
+    git clone https://github.com/katarinatomic/SimpleImageRetrieval.git
     ```
 
 2. Install the required dependencies:
