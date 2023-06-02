@@ -18,8 +18,8 @@ def demo():
 
 # run demo
 n = 5
-query_path = '../test_1/simple_image_retrieval_dataset/test-cases/cat.jpg'
-dataset_root = '../test_1/simple_image_retrieval_dataset/'
+query_path = 'simple_image_retrieval_dataset/test-cases/cat.jpg'
+#dataset_root = '../simple_image_retrieval_dataset/'
 demo()
 
 
