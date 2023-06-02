@@ -90,7 +90,7 @@ def plot_collage(top_similarities: List[float],
         if i==0:
             ax.set_title('Query image')
         else:
-            ax.set_title(f'{image_paths[index].name}\n idx: {index}\n score: {score:.3f}')
+            ax.set_title(f'{image_paths[index].name}\n score: {score:.3f}')
         ax.axis('off')
     plt.savefig(os.path.join('./results',save_filename), transparent = True, bbox_inches = 'tight', pad_inches = 0)
     print(f'Saved similarity collage to ./results/{save_filename}.')
