@@ -44,11 +44,12 @@ def main(query: np.ndarray,
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--image', type=str, default='simple_image_retrieval_dataset/')
+    parser.add_argument('--image', type=str)
     parser.add_argument('--top_n', default=5, help='Number of similar images to display.')
+    parser.add_argument('--root_dataset', default='./simple_image_retrieval_dataset')
 
     args = parser.parse_args()
     query_image = cv2.imread(str(args.image))
     
     n = int(args.top_n)
-    output = main(query_image, str(args.image), n)
+    output = main(query_image, str(args.image), n, args.root_dataset)

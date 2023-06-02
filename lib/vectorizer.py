@@ -72,7 +72,7 @@ class Vectorizer:
         #image = self.normalize(image)
         return image
     
-    def transform(self, images: Sequence[np.ndarray]) -> np.ndarray:
+    def transform_(self, images: Sequence[np.ndarray]) -> np.ndarray:
         """Transform list of images into numpy vectors of image features.
         Args:
             images: A sequence of raw images.
@@ -85,6 +85,29 @@ class Vectorizer:
         vectorized_images = self.model.predict(preprocessed_images)
         
         return np.array(vectorized_images)
+    
+    def transform(self, images: Sequence[np.ndarray], batch_size: int = 32) -> np.ndarray:
+        """Transform list of images into numpy vectors of image features.
+
+        Args:
+            images: A sequence of raw images.
+            batch_size: The batch size for processing images.
+        Returns:
+            Vectorized images as numpy array of (N, D) shape where
+            N is the number of images and D is the feature vector size.
+        """
+        num_images = len(images)
+        vectorized_images = []
+        for i in range(0, num_images, batch_size):
+            batch_images = images[i : i + batch_size]
+            preprocessed_images = [self.preprocess_image(img) for img in batch_images]
+            preprocessed_images = np.array(preprocessed_images)
+            batch_vectors = self.model.predict(preprocessed_images)
+            vectorized_images.append(batch_vectors)
+
+        vectorized_images = np.concatenate(vectorized_images, axis=0)
+        return vectorized_images
+
     
     def save(self, array, filename='vectorized_images.npy'):
         """Saves vectorized images to file.
