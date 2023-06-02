@@ -31,6 +31,10 @@ This step will scan the dataset for corrupted images and remove them. If you don
 
 Replace `<query-image-path>` with the path to your query image, and `<num-results>` with the number of similar images to retrieve.
 
+## Dataset
+
+If this repo is meant for you, you already have it :)
+
 ## Example
 
 Here's an example of how to use the Image Search Engine:
@@ -49,4 +53,3 @@ This command will search for the top 5 similar images to the query image `datase
 ## Authors
 
 - [@katarinatomic](https://github.com/katarinatomic)
-
