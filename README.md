@@ -2,6 +2,7 @@
 
 This is a Python codebase for an Image Retrieval Engine that allows users to find similar images based on a query image. The codebase utilizes image vectorization and cosine similarity to calculate the similarity between images.
 
+![](https://github.com/katarinatomic/SimpleImageRetrieval/blob/main/results/cat.jpg)
 ## Installation
 
 1. Clone the repository:
