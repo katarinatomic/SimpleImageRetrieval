@@ -12,13 +12,13 @@ def demo():
             print("Query image is not color.")
             return
         #main function
-        main(query, query_path, n, dataset_root)        
+        main(query, query_path, n)
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
 # run demo
 n = 5
-query_path = 'simple_image_retrieval_dataset/test-cases/cat.jpg'
+query_path = '../test_1/simple_image_retrieval_dataset/test-cases/cat.jpg'
 #dataset_root = '../simple_image_retrieval_dataset/'
 demo()
 
