@@ -42,7 +42,7 @@ Here's an example of how to use the Image Search Engine:
 
 1. Remove corrupted images:
 
-    ```python remove_corrupted_images.py```
+    ```python remove_corrupted_images.py simple_image_retrieval_dataset/image-db```
 
 2. Perform image search:
 
